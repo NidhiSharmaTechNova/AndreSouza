@@ -1,0 +1,87 @@
+/* .card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+} */
+
+/* .card-wrapper {
+  width: fit-content;
+  height: fit-content;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  ),
+  linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+} */
+
+
+.floating-card {
+  position: fixed;
+  /* top: 180px;
+  left: 420px; */
+
+  width: 300px;
+  height: 300px;
+
+  background: #000;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(-5deg);
+  z-index: 9999;
+
+  visibility: hidden; /* prevents center flash */
+}
+
+.floating-card.show {
+  visibility: visible;
+}
+
+.floating-card img {
+  width: 70%;
+  pointer-events: none;
+}
+
+
+/* MAIN CARD */
+.interactive-card {
+  width: 300px;
+  height: 300px;
+  background: #000;
+  border-radius: 10px;
+  /* box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5); */
+  transform: rotate(-1deg);
+  transition: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+/* .interactive-card:hover {
+  transform: rotate(-12deg) scale(1.05);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7);
+} */
+
+/* IMAGE */
+.interactive-card img {
+  width: 70%;
+  height: auto;
+  pointer-events: none;
+  transition: transform 0.4s ease;
+}
+
+/* .interactive-card:hover img {
+  transform: scale(1.08);
+} */

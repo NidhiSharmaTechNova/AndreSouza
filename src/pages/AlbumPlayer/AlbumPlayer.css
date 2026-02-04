@@ -1,0 +1,96 @@
+.album-wrapper {
+  position: relative;
+  width: 192px;
+  height: 192px;
+  cursor: pointer;
+}
+
+/* ===== VINYL ===== */
+/* .vinyl {
+  position: absolute;
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  background: radial-gradient(#0b0b0b 35%, #000 70%);
+   top: 5px; 
+  right: 45px;
+  z-index: 1;
+
+  animation: spin 2.5s linear infinite;
+  transition: transform 0.5s ease;
+} */
+
+.vinyl {
+  position: absolute;
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  background: radial-gradient(#0b0b0b 35%, #000 70%);
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  animation: spin 2.5s linear infinite;
+  transition: transform 0.5s ease;
+}
+
+
+/* grooves */
+.vinyl::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* album image in center */
+.vinyl-label {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+   top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px #111;
+  border:2px solid red;
+}
+
+/* ===== ALBUM COVER ===== */
+.album-cover {
+  position: absolute;
+  width: 192px;
+  height: 192px;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== CLICK OPEN EFFECT ===== */
+.album-wrapper.open .album-cover {
+  transform: translateX(90px);
+}
+
+.album-wrapper.open .vinyl {
+  transform: translateX(-65px);
+}
+
+/* ===== ROTATION ===== */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

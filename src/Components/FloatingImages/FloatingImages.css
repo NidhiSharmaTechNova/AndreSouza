@@ -1,0 +1,84 @@
+/* 🔥 Page se chipka hua layer */
+.floating-fixed {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* COMMON */
+.float-item {
+  position: absolute;
+  transform-origin: center;
+}
+
+/* ===== BOOK STYLE ===== */
+.float-item.book {
+  width: 150px;
+  background: #fff;
+  padding: 10px 10px 24px;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ===== PHOTO / POLAROID ===== */
+.float-item.photo {
+  width: 170px;
+  background: #fff;
+  padding: 10px 10px 26px;
+  border-radius: 6px;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.28);
+}
+
+/* ===== STICKER ===== */
+.float-item.sticker {
+  width: 90px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.35));
+}
+
+/* IMAGE */
+.float-item img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ===== POSITIONS ===== */
+
+/* LEFT */
+.left.one {
+  top: 10%;
+  left: 4%;
+  transform: rotate(-12deg);
+}
+
+.left.two {
+  top: 42%;
+  left: 6%;
+  transform: rotate(6deg);
+}
+
+.left.three {
+  bottom: 12%;
+  left: 8%;
+  transform: rotate(-18deg);
+}
+
+/* RIGHT */
+.right.one {
+  top: 12%;
+  right: 5%;
+  transform: rotate(10deg);
+}
+
+.right.two {
+  top: 48%;
+  right: 6%;
+  transform: rotate(-6deg);
+}
+
+.right.three {
+  bottom: 14%;
+  right: 9%;
+  transform: rotate(14deg);
+}

@@ -1,0 +1,86 @@
+.notes-page {
+    max-width: 720px;
+    margin: 100px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    color: #111;
+}
+
+.year-block {
+    margin-bottom: 40px;
+}
+
+.year {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    color: hsl(220 5% 13%);
+    color: #1f2123;
+    letter-spacing: -.05em;
+    padding: 0px 20px;
+}
+
+.note-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+    color: hsl(220 5% 13%);
+    color: #1f2123;
+
+}
+
+.note-row:hover {
+    background: hsl(220 7% 90%);
+    background: #e4e5e7;
+}
+
+.note-row.active {
+    background: #f2f2f2;
+}
+
+.title {
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-family: 'Sohne', 'Sohne Fallback', Arial, sans-serif;
+    color: hsl(220 5% 13%);
+    color: #1f2123;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.date {
+    font-size: 13px;
+    color: #777;
+    white-space: nowrap;
+}
+
+body.dark-theme .year{
+    color: #e0e0e0;
+}
+
+body.dark-theme .title ,.date {
+    color: white;
+}
+
+body.dark-theme .note-row:hover {
+    background: #181b20;
+}
+
+body.dark-theme .line{
+    background: #1f2229;
+}
+
+

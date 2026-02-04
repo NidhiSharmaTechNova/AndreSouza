@@ -1,0 +1,105 @@
+/* GRID */
+.photos-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 60px 40px;
+}
+
+.photos-page img {
+  width: 100%;
+  border-radius: 16px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* SLIDER BG */
+.white-slider {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* WRAPPER = image reference */
+.slider-wrapper {
+  position: relative;
+  width: 75%;
+}
+
+/* TRACK */
+.slider-track {
+  overflow: hidden;
+}
+
+/* INNER */
+.slider-inner {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* SLIDE */
+.slide {
+  min-width: 33.33%;
+  padding: 0 12px;
+  /* opacity: 0.5;
+  transform: scale(0.9);
+  transition: all 0.4s ease; */
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+/* ARROWS ON IMAGE */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.nav.left {
+  left: 20px;
+}
+
+.nav.right {
+  right: 20px;
+}
+
+/* CLOSE ON IMAGE */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 11;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}

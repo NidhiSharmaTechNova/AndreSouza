@@ -1,0 +1,230 @@
+/* .book-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.book-stack {
+  position: relative;
+  width: 180px;
+  height: 260px;
+}
+
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.back-blue {
+  background: #0b4cff;
+  right: -16px;
+  z-index: 0;
+}
+
+ .white-page {
+  background: #ffffff;
+  height: calc(100% - 12px);
+  top: 6px;
+  right: -10px;
+  border-radius: 0;
+  z-index: 1;
+}
+
+.book {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.book img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.corner-tag {
+  position: absolute;
+  top: 6px;
+  right: 16px; 
+  width: 16px;
+  height: 16px;
+  background: #d9d9d9;
+  color: #555;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.book-title {
+  margin-top: 16px;
+  padding: 10px 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+} */
+
+
+.book-wrapper {
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+/* 3D CONTAINER */
+.book-3d {
+  position: relative;
+  width: 135px;
+  height: 200px;
+
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  perspective: 1000px;
+
+  transform: rotateY(0deg);
+  transition: transform 0.35s ease;
+
+  cursor: pointer;
+}
+
+/* OPEN STATE */
+.book-3d:hover,
+.book-3d:focus,
+.book-3d[data-state="open"] {
+  transform: rotateY(-20deg) scale(1.03) translateX(-2px);
+}
+
+/* COMMON PAGE */
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0;
+}
+
+/* WHITE PAGE */
+.white-page {
+  background: #ffffff;
+  height: calc(100% - 12px);
+  top: 6px;
+  right: 0;
+  z-index: 1;
+}
+
+/* BACK BLUE PAGE */
+.back-blue {
+  background: #0b4cff;
+  right: 0;
+  z-index: 0;
+}
+
+/* REVEAL PAGES ON HOVER */
+.book-3d:hover .white-page,
+.book-3d[data-state="open"] .white-page {
+  transform: translateX(10px);
+  opacity: 1;
+}
+
+.book-3d:hover .back-blue,
+.book-3d[data-state="open"] .back-blue {
+  transform: translateX(16px);
+  opacity: 1;
+}
+
+/* FRONT BOOK */
+.book {
+  position: relative;
+  width: 100%;
+  height: 100%;
+ border-radius: 0px 6px 6px 0px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.book img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TITLE */
+/* .book-title {
+  margin-top: 16px;
+  padding: 10px 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+} */
+
+/* TITLE — hidden by default */
+/* .book-title {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;       
+  display: inline-block;     
+  max-width: 100%;    
+} */
+
+.book-title {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #ffffff;        /* White background */
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  /* Make text single-line and box width fit text */
+  display: inline-block;      /* Box shrinks to text */
+  white-space: nowrap;        /* Prevent text wrapping */
+}
+
+
+/* SHOW TITLE ON BOOK HOVER */
+.book-wrapper:hover .book-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+body.dark-theme .book-title {
+  background-color: #121417;
+  border: 1px solid #27282a;
+}

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-function App() {
+import BottomNav from "./Components/BottomNav/BottomNav"
+import Home from "./pages/Home/Home"
+import Projects from "./pages/Projects/Projects"
+import Craft from "./pages/Craft/Craft"
+import Notes from "./pages/Notes/Notes"
+import Photos from "./pages/Photos/Photos"
+import { useState } from "react"
+
+export default function App() {
+  const [hideBottomNav, setHideBottomNav] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+      {/* SCROLL WRAPPER */}
+      <div className="app-wrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/craft" element={<Craft />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route
+            path="/photos"
+            element={<Photos setHideBottomNav={setHideBottomNav} />}
+          />
+        </Routes>
+      </div>
 
-export default App;
+      {/* FIXED BOTTOM NAV */}
+     {!hideBottomNav && <BottomNav />}
+    </BrowserRouter>
+  )
+}
