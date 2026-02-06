@@ -1,252 +1,3 @@
-// import { useRef, useState, useEffect } from "react";
-// import "./Home.css";
-
-// import img from "../../Components/assets/profilePicture.png";
-// import img1 from "../../Components/assets/image-1.webp";
-// import img2 from "../../Components/assets/image-2.webp";
-
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import GitHubIcon from "@mui/icons-material/GitHub";
-// import EmailIcon from "@mui/icons-material/Email";
-
-// export default function Home() {
-//   const canvasRef = useRef(null);
-
-// const [offset, setOffset] = useState({ x: -600, y: -400 });
-// const isDragging = useRef(false);
-// const start = useRef({ x: 0, y: 0 });
-
-// const onMouseDown = (e) => {
-//   isDragging.current = true;
-//   start.current = {
-//     x: e.clientX - offset.x,
-//     y: e.clientY - offset.y
-//   };
-// };
-
-// const onMouseMove = (e) => {
-//   if (!isDragging.current) return;
-
-//   setOffset({
-//     x: e.clientX - start.current.x,
-//     y: e.clientY - start.current.y
-//   });
-// };
-
-// const onMouseUp = () => {
-//   isDragging.current = false;
-// };
-
-//   const [offset, setOffset] = useState({ x: -600, y: -400 });
-//   const isDragging = useRef(false);
-//   const start = useRef({ x: 0, y: 0 });
-
-//   const onMouseDown = (e) => {
-//     isDragging.current = true;
-//     start.current = {
-//       x: e.clientX - offset.x,
-//       y: e.clientY - offset.y
-//     };
-//   };
-
-//   const onMouseMove = (e) => {
-//     if (!isDragging.current) return;
-//     setOffset({
-//       x: e.clientX - start.current.x,
-//       y: e.clientY - start.current.y
-//     });
-//   };
-
-//   const onMouseUp = () => {
-//     isDragging.current = false;
-//   };
-
-
-
-//   return (
-//     <div
-//       ref={canvasRef}
-//       className="canvas"
-//       onMouseDown={onMouseDown}
-//       onMouseMove={onMouseMove}
-//       onMouseUp={onMouseUp}
-//       onMouseLeave={onMouseUp}
-//       style={{
-//         transform: `translate(${offset.x}px, ${offset.y}px)`
-//       }}
-//     >
-
-//        <div className="bg-floating">
-
-
-//         <img src={img1} className="bg-item r1 p1 float-slow" alt="" />
-//         <img src={img2} className="bg-item r2 p2 float-medium" alt="" />
-
-
-//         <div className="bg-book r4 b1 float-slow">HELLO</div>
-
-
-//         <div className="bg-sticker r5 s1 float-fast">★</div>
-
-//         <div className="bg-note r6 n1 float-medium">NEXT.JS</div>
-//         <div className="bg-note r7 n2 float-slow">REACT</div>
-
-//       </div>
-
-//       <div className="cards-stack">
-
-//         <div className="center-card">
-//           <div className="profile">
-//             <img src={img} alt="profile" />
-//             <div className="card-name">
-//               <h2>Andre Souza</h2>
-//               <span>Design Engineer</span>
-//             </div>
-//           </div>
-
-//           <p>
-//             Welcome to <i>my space on the internet</i>. I'm a design engineer who
-//             crafts interactions that spark joy, delight, and a sense of magic in users.
-//           </p>
-
-//           <p>
-//             Growing up, I spent hours playing Street Fighter, Donkey Kong, and
-//             Super Mario in a Super Nintendo with my dad, and somewhere between
-//             levels, I developed high expectations for how interactions should feel.
-//           </p>
-
-//           <p>
-//             Have fun exploring my portfolio, and feel free to connect below.
-//           </p>
-
-//           <div className="links">
-//             <button><TwitterIcon />Twitter</button>
-//             <button><LinkedInIcon />LinkedIn</button>
-//             <button><GitHubIcon />GitHub</button>
-//             <button><EmailIcon />Mail</button>
-//           </div>
-
-//           <div className="divider" />
-
-//           <div className="experience">
-
-//             <div className="row">
-//               <div className="dot blue" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Praia Health</h3>
-//                   <h4>Staff Product Designer</h4>
-//                 </div>
-//                 <p>2024 – Present</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot green" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Stone</h3>
-//                   <h4>Specialist Product Designer</h4>
-//                 </div>
-//                 <p>2022 – 2024</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot darkgreen" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Pager.me</h3>
-//                   <h4>Senior Product Designer</h4>
-//                 </div>
-//                 <p>2019 – 2022</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot orange" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Try</h3>
-//                   <h4>UX Designer & Researcher</h4>
-//                 </div>
-//                 <p>2018 – 2019</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot darkblue" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>National Council of Science</h3>
-//                   <h4>UX Designer</h4>
-//                 </div>
-//                 <p>2018</p>
-//               </div>
-//             </div>
-
-//           </div>
-//         </div>
-
-//         <div className="center-card experience-card">
-//           <h3 className="section-title">Education</h3>
-
-//           <div className="experience">
-
-//             <div className="row">
-//               <div className="dot ligthblue" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Meiuca</h3>
-//                   <h4>Design system & Ops</h4>
-//                 </div>
-//                 <p>2021</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot black" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Interaction Design Foundation</h3>
-//                   <h4>Psychology of Interaction</h4>
-//                 </div>
-//                 <p>2019</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot yellow" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Senac - BA</h3>
-//                   <h4>Interaction Design</h4>
-//                 </div>
-//                 <p>2016 – 2019</p>
-//               </div>
-//             </div>
-
-//             <div className="row">
-//               <div className="dot darkorange" />
-//               <div className="card-product">
-//                 <div className="product-name">
-//                   <h3>Adobe School of Arts</h3>
-//                   <h4>3D & Motion Graphics</h4>
-//                 </div>
-//                 <p>2014 – 2016</p>
-//               </div>
-//             </div>
-
-//           </div>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-
 import "./Home.css";
 import img from "../../Components/assets/profilePicture.png";
 import img3 from "../../Components/assets/image-1.webp";
@@ -313,7 +64,7 @@ export default function Home() {
   const wrapRef = useRef(null);
   const canvasRef = useRef(null);
 
-  // 👉 load pe center scroll
+ 
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
@@ -323,7 +74,7 @@ export default function Home() {
     el.scrollTop = (size - window.innerHeight) / 2;
   }, []);
 
-  // 👉 cursor rotate / parallax
+  
   useEffect(() => {
     const handleMove = (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 6;
@@ -339,27 +90,55 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMove);
   }, []);
 
-
   return (
 
     <div className="board-wrapper" ref={wrapRef}>
-      <div className="board-canvas" ref={canvasRef} >
+      <div className="board-canvas" ref={canvasRef}>
 
         <img src={bgImg} className="canvas-bg-img" alt="" />
         <div className="cards-stack">
           <div className="center-card">
-            <div className="profile">
+            {/* <div className="profile">
               <img src={img} alt="profile" />
               <div className="card-name">
                 <h2>Andre Souza</h2>
                 <span>Design Engineer</span>
               </div>
+            </div> */}
+
+            <div className="profile-wrapper">
+              <div className="profile">
+                <img src={img} alt="profile" />
+                <div className="card-name">
+                  <h2>Andre Souza</h2>
+                  <span>Design Engineer</span>
+                </div>
+              </div>
+
+              <svg
+                className="profile-bg-svg"
+                viewBox="0 0 170 170"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M48.984 57.6266C39.1262 37.9349 47.1632 14.0126 66.9347 4.19468C86.7063 -5.62326 110.726 2.38104 120.584 22.0727L165.788 112.373C175.646 132.065 167.609 155.987 147.838 165.805C128.066 175.623 104.047 167.619 94.1889 147.927L48.984 57.6266ZM112.699 38.9242C112.699 54.1243 100.327 66.4465 85.0649 66.4465C69.8029 66.4465 57.4306 54.1243 57.4306 38.9242C57.4306 23.7239 69.8029 11.4016 85.0649 11.4016C100.327 11.4016 112.699 23.7239 112.699 38.9242ZM4.2117 112.373L28.0668 64.7207L72.2659 153.625L72.3337 153.634C61.0496 169.079 39.8972 174.612 22.1623 165.805C2.3907 155.987 -5.64607 132.065 4.2117 112.373Z"
+                  fill="currentColor"
+                />
+              </svg>
             </div>
 
-            <p>
-              Welcome to <i>my space on the internet</i>. I'm a design engineer who
-              crafts interactions that spark joy, delight, and a sense of magic in users.
+
+            <p className="intro-text">
+              Welcome to{" "}
+              <span className="native-italic">my space on the internet</span>. I'm a design engineer
+              who crafts interactions that spark joy, delight, and a sense of magic in users.
             </p>
+
+
+
 
             <p>
               Growing up, I spent hours playing Street Fighter, Donkey Kong, and Super Mario in a Super Nintendo with my dad, and somewhere between   levels, I developed high expectations for how interactions should feel.
@@ -370,10 +149,10 @@ export default function Home() {
             </p>
 
             <div className="links">
-              <button><TwitterIcon />Twitter</button>
-              <button><LinkedInIcon />LinkedIn</button>
-              <button><GitHubIcon />GitHub</button>
-              <button><EmailIcon />Mail</button>
+              <button><TwitterIcon className="icon" />Twitter</button>
+              <button><LinkedInIcon className="icon" />LinkedIn</button>
+              <button><GitHubIcon className="icon" />GitHub</button>
+              <button><EmailIcon className="icon" />Mail</button>
             </div>
 
             <div className="divider" />
@@ -511,7 +290,7 @@ export default function Home() {
           <img className='sticker9' src={img9} alt="" />
         </div>
 
-         <div className="sticker img10">
+        <div className="sticker img10">
           <img className='sticker10' src={img10} alt="" />
         </div>
 
@@ -623,7 +402,7 @@ export default function Home() {
           />
         </div>
 
-         <div className="book-pos b13">
+        <div className="book-pos b13">
           <Book
             cover={book13}
             title="Mega Man"

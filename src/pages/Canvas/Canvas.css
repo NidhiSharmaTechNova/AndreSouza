@@ -1,81 +1,9 @@
-/* .canvas-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #f0f0f0;
-  padding: 20px;
-  position: relative;
-}
-
-.drawing-canvas {
-  cursor: crosshair;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  border-radius: 16px;
-  background: #f5e6d3;
-  display: block;
-  border: 5px solid #c9b896;
-  width: 500px;
-  height: 380px;
-}
-
-.drawing-canvas:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-}
-
-.clear-btn {
-  position: absolute;
-  bottom: 30px;
-  right: 60px;
-  width: 45px;
-  height: 45px;
-  border-radius: 8px;
-  border: 2px solid #333;
-  background: #fff;
-  color: #333;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.clear-btn:hover {
-  background: #f0f0f0;
-  transform: scale(1.05);
-}
-
-.color-picker {
-  position: absolute;
-  bottom: 30px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  border-radius: 8px;
-  background: #d946ef;
-  border: 2px solid #d946ef;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.color-picker:hover {
-  transform: scale(1.05);
-}
-
-.canvas-info {
-  display: none;
-} */
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .canvas-wrapper {
-  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #f7f7f7; */
 }
 
 .andre-card {
@@ -84,7 +12,6 @@
   background: #f3e6cc;
   border-radius: 10px;
   border: 4px solid #d1b98b;
-  /* box-shadow: 0 30px 40px rgba(0, 0, 0, 0.25); */
   position: relative;
   overflow: hidden;
 }
@@ -156,7 +83,6 @@ canvas {
   justify-content: center;
 }
 
-/* ACTION BAR – bottom fixed row */
 .actions {
   position: absolute;
   bottom: 14px;
@@ -169,15 +95,14 @@ canvas {
   z-index: 10;
 }
 
-/* wrapper for picker */
 .color-pickers {
   position: relative;
 }
 
-/* hidden picker (upar se niklega) */
+
 .picker {
   position: absolute;
-  bottom: 44px; /* main-color ke upar */
+  bottom: 44px; 
   left: 50%;
   transform: translateX(-50%) translateY(12px);
   display: flex;
@@ -188,14 +113,13 @@ canvas {
   transition: all 0.35s ease;
 }
 
-/* show animation */
+
 .picker.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* blocks */
 .color-block {
   width: 40px;
   height: 40px;

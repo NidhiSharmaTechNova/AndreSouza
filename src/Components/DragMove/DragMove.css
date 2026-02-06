@@ -1,0 +1,57 @@
+.auto-move-btn {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border-radius: 22px;
+  background: #ffffff;
+  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  user-select: none;
+  font-family: "Arimo", sans-serif;
+  animation: equalSpeedBounce 1s linear infinite;
+}
+
+.move-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+
+@keyframes equalSpeedBounce {
+
+ 
+  0% {
+    transform: translate(-50%, -10px);
+  }
+
+  
+  45% {
+    transform: translate(-50%, 0px);
+  }
+
+
+  52% {
+    transform: translate(-50%, -5px);
+  }
+
+  
+  100% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+body.dark-theme .auto-move-btn {
+  background: #121417;
+  color: white;
+}

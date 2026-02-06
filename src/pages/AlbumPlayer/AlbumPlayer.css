@@ -5,7 +5,7 @@
   cursor: pointer;
 }
 
-/* ===== VINYL ===== */
+
 /* .vinyl {
   position: absolute;
   width: 192px;
@@ -35,7 +35,7 @@
 }
 
 
-/* grooves */
+
 .vinyl::before {
   content: "";
   position: absolute;
@@ -44,7 +44,6 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* album image in center */
 .vinyl-label {
   position: absolute;
   width: 70px;
@@ -58,7 +57,7 @@
   border:2px solid red;
 }
 
-/* ===== ALBUM COVER ===== */
+
 .album-cover {
   position: absolute;
   width: 192px;
@@ -75,7 +74,6 @@
   object-fit: cover;
 }
 
-/* ===== CLICK OPEN EFFECT ===== */
 .album-wrapper.open .album-cover {
   transform: translateX(90px);
 }
@@ -84,7 +82,8 @@
   transform: translateX(-65px);
 }
 
-/* ===== ROTATION ===== */
+
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

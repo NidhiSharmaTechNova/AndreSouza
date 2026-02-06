@@ -26,7 +26,7 @@ export default function Photos({ setHideBottomNav }) {
   const openSlider = (i) => {
     setIndex(i);
     setOpen(true);
-    setHideBottomNav(true);  // 👈 bottom nav hide
+    setHideBottomNav(true);  
   };
 
   const prev = () => {
@@ -39,7 +39,7 @@ export default function Photos({ setHideBottomNav }) {
 
 const closeSlider = () => {
   setOpen(false);
-  setHideBottomNav(false);  // 👈 bottom nav show
+  setHideBottomNav(false);  
 };
 
   return (
@@ -55,10 +55,10 @@ const closeSlider = () => {
       {open && (
         <div className="white-slider">
           <div className="slider-wrapper">
-            {/* close on image */}
+           
             <span className="close" onClick={closeSlider}>×</span>
 
-            {/* left arrow on image */}
+            
             <span className="nav left" onClick={prev}>❮</span>
 
             <div className="slider-track">
@@ -77,7 +77,7 @@ const closeSlider = () => {
               </div>
             </div>
 
-            {/* right arrow on image */}
+            
             <span className="nav right" onClick={next}>❯</span>
           </div>
         </div>

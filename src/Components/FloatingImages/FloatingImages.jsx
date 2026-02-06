@@ -25,7 +25,6 @@ export default function FloatingImages() {
   return (
     <div className="floating-fixed">
 
-      {/* LEFT SIDE */}
       <div className="float-item book left one">
         <img src={book1} />
       </div>
@@ -38,7 +37,7 @@ export default function FloatingImages() {
         <img src={sticker1} />
       </div>
 
-      {/* RIGHT SIDE */}
+     
       <div className="float-item photo right one">
         <img src={photo2} />
       </div>

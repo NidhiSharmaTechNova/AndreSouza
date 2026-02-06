@@ -1,147 +1,84 @@
-//  import React from 'react'
-//  import "./Countdown.css"
-
-//  function Countdown() {
-//    return (
-//      <div className='flip-card flip'>
-//         <div className='top'>4</div>
-//         <div className='bottom'>4</div>
-//      </div>
-//    )
-//  }
-
-//  export default Countdown
-
-
-// import React, { useEffect, useState } from "react";
-// import "./Countdown.css";
-
-// function FlipCard({ value, delay = 0 }) {
-//   const [current, setCurrent] = useState(value);
-//   const [prev, setPrev] = useState(value);
-//   const [flip, setFlip] = useState(false);
-
-//   useEffect(() => {
-//     if (value !== current) {
-//       setPrev(current);
-//       setFlip(true);
-
-//       setTimeout(() => {
-//         setCurrent(value);
-//         setFlip(false);
-//       }, 500);
-//     }
-//   }, [value]);
-
-//   return (
-//     <div
-//       className={`flip-card ${flip ? "flip" : ""}`}
-//       data-prev={prev}
-//       data-current={value}
-//     >
-//       <div className="top">
-//         <span>{value}</span>
-//       </div>
-//       <div className="bottom">
-//         <span>{value}</span>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default function Countdown() {
-//   const [time, setTime] = useState(new Date());
-
-//   useEffect(() => {
-//     const t = setInterval(() => {
-//       setTime(new Date());
-//     }, 1000);
-//     return () => clearInterval(t);
-//   }, []);
-
-//   const h = String(time.getHours()).padStart(2, "0");
-//   const m = String(time.getMinutes()).padStart(2, "0");
-//   const s = String(time.getSeconds()).padStart(2, "0");
-
-//   return (
-//     <div style={{ display: "flex", gap: "14px" }}>
-//       <FlipCard value={h} />
-//       <FlipCard value={m} />
-//       <FlipCard value={s} />
-//     </div>
-//   );
-// }
-
-
-
-
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./Countdown.css";
 
-function FlipCard({ value }) {
-  const [current, setCurrent] = useState(value);
-  const [prev, setPrev] = useState(value);
-  const [flip, setFlip] = useState(false);
-
-  useEffect(() => {
-    if (value !== current) {
-      setPrev(current);
-      setFlip(true);
-
-      const t = setTimeout(() => {
-        setCurrent(value);
-        setFlip(false);
-      }, 600);
-
-      return () => clearTimeout(t);
-    }
-  }, [value, current]);
-
-  return (
-    <div className="flip-card">
-      {/* STATIC */}
-      <div className="card-upper">
-        <div className="digit">{current}</div>
-      </div>
-      <div className="card-lower">
-        <div className="digit">{current}</div>
-      </div>
-
-      {/* FLIP */}
-      {flip && (
-        <>
-          <div className="flip-upper">
-            <div className="digit">{prev}</div>
-          </div>
-          <div className="flip-lower">
-            <div className="digit">{value}</div>
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
-
 export default function Countdown() {
-  const [time, setTime] = useState(new Date());
-
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
+    const interval = setInterval(() => {
+      const now = new Date();
+
+      flip(
+        document.querySelector("[data-hours]"),
+        String(now.getHours()).padStart(2, "0")
+      );
+      flip(
+        document.querySelector("[data-minutes]"),
+        String(now.getMinutes()).padStart(2, "0")
+      );
+      flip(
+        document.querySelector("[data-seconds]"),
+        String(now.getSeconds()).padStart(2, "0")
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
-  const h = String(time.getHours()).padStart(2, "0");
-  const m = String(time.getMinutes()).padStart(2, "0");
-  const s = String(time.getSeconds()).padStart(2, "0");
+  function flip(flipCard, newValue) {
+    const topHalf = flipCard.querySelector(".top");
+    const startValue = topHalf.textContent;
+    if (newValue === startValue) return;
+
+    const bottomHalf = flipCard.querySelector(".bottom");
+
+    const topFlip = document.createElement("div");
+    topFlip.classList.add("top-flip");
+    topFlip.textContent = startValue;
+
+    const bottomFlip = document.createElement("div");
+    bottomFlip.classList.add("bottom-flip");
+    bottomFlip.textContent = newValue;
+
+    bottomHalf.textContent = startValue;
+
+    topFlip.addEventListener("animationstart", () => {
+      topHalf.textContent = newValue;
+    });
+
+    topFlip.addEventListener("animationend", () => {
+      topFlip.remove();
+    });
+
+    bottomFlip.addEventListener("animationend", () => {
+      bottomHalf.textContent = newValue;
+      bottomFlip.remove();
+    });
+
+    flipCard.append(topFlip, bottomFlip);
+  }
 
   return (
-    <div className="flip-clock">
-      <FlipCard value={h} />
-      
-      <FlipCard value={m} />
-      
-      <FlipCard value={s} />
+    <div className="container">
+      <div className="container-segment">
+        <div className="flip-card" data-hours>
+          <div className="top">00</div>
+          <div className="bottom">00</div>
+        </div>
+      </div>
+
+      <div className="container-segment">
+       
+        <div className="flip-card" data-minutes>
+          <div className="top">00</div>
+          <div className="bottom">00</div>
+        </div>
+      </div>
+
+      <div className="container-segment">
+        <div className="flip-card" data-seconds>
+          <div className="top">00</div>
+          <div className="bottom">00</div>
+        </div>
+      </div>
     </div>
   );
 }
-

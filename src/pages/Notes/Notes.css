@@ -71,7 +71,8 @@ body.dark-theme .year{
     color: #e0e0e0;
 }
 
-body.dark-theme .title ,.date {
+body.dark-theme .title ,
+body.dark-theme .date {
     color: white;
 }
 

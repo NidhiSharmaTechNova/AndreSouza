@@ -1,284 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Mono&display=swap');
 
 
-/* .flip-card {
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    width: 96px;
-    height: 96px;
-    font-size: 40px;
-    font-weight: 600;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
-    border-radius: 0.5rem;
-    perspective: 800px;
-    box-sizing: border-box;
-    background-color: hsl(220 7% 100%);
-    background-color: #ffffff;
-    font-family: "Fira Code", monospace;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.top,
-.bottom,
-.flip-card.flip::before,
-.flip-card.flip::after {
-    height: .75em;
-    line-height: 1;
-    padding: .25em;
-    overflow: hidden;
-    width: 100%;
-    left: 0;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
-.top,
-.flip-card.flip::before {
-    background-color: hsl(220 7% 100%);
-}
-
-.bottom,
-.flip-card.flip::after {
-    background-color: hsl(220 7% 100%);
-    display: flex;
-    align-items: flex-end;
-}
-
-.flip-card.flip::before {
-    position: absolute;
-    content: attr(data-prev);
-    transform-origin: bottom;
-    animation: flip-top 250ms ease-in forwards;
-    align-items: flex-end;
-    top: 0;
-    overflow: hidden;
-}
-
-.flip-card.flip::after {
-    position: absolute;
-    bottom: 0;
-    content: attr(data-current);
-    transform-origin: top;
-    transform: rotateX(90deg);
-    animation: flip-bottom 250ms ease-out 250ms forwards;
-    align-items: flex-end;
-}
-
-.top {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
-.bottom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-@keyframes flip-top {
-    to {
-        transform: rotateX(90deg);
-    }
-}
-
-@keyframes flip-bottom {
-    to {
-        transform: rotateX(0deg);
-    }
-} */
-
-
-
-.flip-clock {
-    display: flex;
-    gap: 12px;
-    perspective: 1200px;
-}
-
-/* .flip-card {
-  position: relative;
-  width: 72px;
-  height: 90px;
-  background: #111;
-  border-radius: 10px;
-  overflow: hidden;
-  perspective: 1200px;
-} */
-
-/* DIGIT */
 .flip-card {
   position: relative;
-  width: 96px;
-  height: 96px;
-  background: #fafafa;
-  border-radius: 10px;
-  overflow: hidden;
-  perspective: 1000px;
-  font-family: "Fira Code", monospace;
-  font-size: 40px;
-    font-weight: 600;
-}
-
-/* DIGIT */
-.digit {
-  height: 200%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 46px;
-  font-weight: 600;
-  color: #0f0f0f;
-  background: #fafafa;
-}
-
-/* STATIC CARD */
-.card-upper,
-.card-lower {
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  overflow: hidden;
-  background: #fafafa;
-  z-index: 1; /* 👈 stays below flip */
-}
-
-.card-upper {
-  top: 0;
-  border-bottom: 1px solid #fafafa;
-}
-.card-upper .digit {
-  transform: translateY(1%);
-}
-
-.card-lower {
-  bottom: 0;
-}
-.card-lower .digit {
-  transform: translateY(-50%);
-}
-
-/* FLIP LAYERS (ONLY DURING ANIMATION) */
-.flip-upper {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50%;
-  background: #fafafa;
-  overflow: hidden;
-  transform-origin: bottom;
-  animation: flipTop 0.6s ease-in forwards;
-  z-index: 5;
-}
-.flip-upper .digit {
-  transform: translateY(1%);
-}
-
-.flip-lower {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50%;
-  background: #fafafa;
-  overflow: hidden;
-  transform-origin: top;
-  transform: rotateX(90deg);
-  animation: flipBottom 0.6s ease-out forwards;
-  z-index: 4;
-}
-.flip-lower .digit {
-  transform: translateY(-50%);
-}
-
-@keyframes flipTop {
-  to { transform: rotateX(-90deg); }
-}
-
-@keyframes flipBottom {
-  to { transform: rotateX(0deg); }
-}
-
-
-
-/* .flip-card {
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
+  display: inline-flex;
+  flex-direction: column;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+  border-radius: .1em;
+  font-size: 4rem;
+  font-family: "Arimo", sans-serif;
 }
 
 .top,
 .bottom,
-.flip-card.flip::after,
-.flip-card.flip::before {
-    height: .75em;
-    line-height: 1;
-    padding: .25em;
-    overflow: hidden;
+.flip-card .top-flip,
+.flip-card .bottom-flip {
+  height: .75em;
+  line-height: 1;
+  padding: .25em;
+  overflow: hidden;
 }
 
-.top ,
-.flip-card.flip::before{
-    background-color: aliceblue;
-    border-bottom: 1px solid black;
+.top,
+.flip-card .top-flip {
+  background-color: #ffffff;
+  border-top-right-radius: .1em;
+  border-top-left-radius: .1em;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
-.bottom ,
-.flip-card.flip::after{
-    background-color: white;
-    display: flex;
-    align-items: flex-end;
+.bottom,
+.flip-card .bottom-flip {
+  background-color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+  border-bottom-right-radius: .1em;
+  border-bottom-left-radius: .1em;
 }
 
-.flip-card.flip::before {
-    position: absolute;
-    content: attr(data-prev);
-    width: 100%;
-    transform-origin: bottom;
-    animation: flip-top 250ms ease-in;
+.flip-card .top-flip {
+  position: absolute;
+  width: 100%;
+  animation: flip-top 250ms ease-in;
+  transform-origin: bottom;
 }
 
 @keyframes flip-top {
-    100% {
-        transform: rotateX(90deg);
-    }
+  100% {
+    transform: rotateX(90deg);
+  }
 }
 
-.flip-card.flip::after {
-    position: absolute;
-    content: attr(data-current);
-    bottom:0;
-    width: 100%;
-    animation: flip-bottom 250ms ease-out ;
-    transform-origin: top;
-    transform: rotateX(90deg);
+.flip-card .bottom-flip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  animation: flip-bottom 250ms ease-out 250ms;
+  transform-origin: top;
+  transform: rotateX(90deg);
 }
 
 @keyframes flip-bottom {
-    100% {
-        transform: rotateX(0deg);
-    }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.container-segment {
+  display: flex;
+  flex-direction: column;
+  gap: .1em;
+  align-items: center;
+}
+
+.segment {
+  display: flex;
+  gap: .1em;
+}
+
+.segment-title {
+  font-size: 1rem;
 }
 
 body.dark-theme .flip-card,
 body.dark-theme .top,
+body.dark-theme .top-flip,
+body.dark-theme .bottom-flip,
 body.dark-theme .bottom,
 body.dark-theme .flip-card.flip::before,
 body.dark-theme .flip-card.flip::after {
     background-color: #121417;
 }
-
-
-/*@keyframes flip-top {
-    to {
-        transform: rotateX(90deg);
-    }
-}
-
-@keyframes flip-bottom {
-    to {
-        transform: rotateX(0deg);
-    }
-}   */

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 
 import BottomNav from "./Components/BottomNav/BottomNav"
 import Home from "./pages/Home/Home"
@@ -7,12 +7,15 @@ import Craft from "./pages/Craft/Craft"
 import Notes from "./pages/Notes/Notes"
 import Photos from "./pages/Photos/Photos"
 import { useState } from "react"
+import DragMove from "./Components/DragMove/DragMove"
 
 export default function App() {
+  const location = useLocation();
   const [hideBottomNav, setHideBottomNav] = useState(false);
+
+  const isHomePage = location.pathname === "/";
   return (
-    <BrowserRouter>
-      {/* SCROLL WRAPPER */}
+    <>
       <div className="app-wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -26,8 +29,9 @@ export default function App() {
         </Routes>
       </div>
 
-      {/* FIXED BOTTOM NAV */}
-     {!hideBottomNav && <BottomNav />}
-    </BrowserRouter>
+      {!hideBottomNav && <BottomNav />}
+
+      {isHomePage && <DragMove />}
+    </>
   )
 }

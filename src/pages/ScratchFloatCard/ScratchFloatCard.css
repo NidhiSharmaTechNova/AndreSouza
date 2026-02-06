@@ -9,7 +9,7 @@
   cursor: url('../../Components/assets/cursor.svg') 16 16, auto; 
 }
 
-/* BACK */
+
 .card-back {
   position: absolute;
   inset: 0;
@@ -23,7 +23,7 @@
   opacity: 0.65;
 }
 
-/* STICKERS */
+
 .st {
   position: absolute;
   width: 52px;
@@ -33,7 +33,7 @@
 .s1 { top: 3%; left: 8%; transform: rotate(-54deg); width:120px;}
 .s2 { bottom: 10%; right: 10%; transform: rotate(-5deg); width:165px; }
 
-/* TEXT CENTER */
+
 .reveal-text {
   position: absolute;
   inset: 0;
@@ -48,7 +48,6 @@
   pointer-events: none;
 }
 
-/* TEXT STRIP */
 .lines {
   width: max-content;
   padding: 8px 18px;
@@ -69,7 +68,6 @@
   background-color: #000;
 }
 
-/* ONLY AFTER SCRATCH COMPLETE */
 .scratch-card.revealed:hover .lines {
   animation-play-state: running;
 }
@@ -84,7 +82,7 @@
   to { transform: translateX(-40%); }
 }
 
-/* SCRATCH LAYER */
+
 .scratch-canvas {
   position: absolute;
   inset: 0;
@@ -92,7 +90,7 @@
   cursor: crosshair;
 }
 
-/* disable scratch after reveal */
+
 .scratch-card.revealed .scratch-canvas {
   pointer-events: none;
 }

@@ -12,7 +12,6 @@ import TurbulenceCanvas from '../Canvas/Canvas';
 import AlbumPlayer from '../AlbumPlayer/AlbumPlayer';
 
 
-/* ===== SVG ICONS ===== */
 const CraftHomeIcon = () => (
   <svg className="nav-svg" width="22" height="22" viewBox="0 0 24 24">
     <path d="M3 10.5L12 3L21 10.5V21H14V14H10V21H3V10.5Z" />

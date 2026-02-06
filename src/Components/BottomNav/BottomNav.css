@@ -18,12 +18,12 @@
 
 .nav-item-wrapper {
   position: relative;
-  display: inline-block; /* ensures tooltip is above its button only */
+  display: inline-block; 
 }
 
 .nav-item {
   position: relative;
-  overflow: visible; /* ADD THIS */
+  overflow: visible; 
   height: 46px;
   max-width: 46px;
   /* padding: 10px 10px; */
@@ -38,8 +38,6 @@
   transition: max-width 420ms cubic-bezier(.22, .9, .35, 1), background 300ms ease;
 }
 
-
-/* SVG */
 .nav-svg {
   width: 20px;
   height: 20px;
@@ -53,7 +51,7 @@
   fill: none;
 }
 
-/* ACTIVE */
+
 .nav-item.active .nav-svg path,
 .nav-item.active .nav-svg rect,
 .nav-item.active .nav-svg circle {
@@ -71,7 +69,6 @@
 }
 
 
-/* LABEL */
 .label {
   font-size: 14px;
   font-weight: 500;
@@ -93,7 +90,6 @@
   transform: translateX(0);
 }
 
-/* HOVER STATE */
 .nav-item:hover {
   background-color: hsl(220 7% 92%);
   background-color: #e9eaec;
@@ -102,14 +98,15 @@
 
 .tooltip {
   position: absolute;
-  bottom: 120%; /* above the button */
+  bottom: 120%; 
   left: 50%;
-  transform: translateX(-50%) translateY(6px); /* start slightly lower */
+  transform: translateX(-50%) translateY(6px); 
   background: #fff;
   color: #111;
   font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 12px;
+  padding: 8px 14px;
+  border-radius: .5em;
+  font-family: "Arimo", sans-serif;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
   opacity: 0;
   pointer-events: none;
@@ -118,14 +115,14 @@
   z-index: 9999;
 }
 
-/* SHOW STATE */
+
 .tooltip.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0); 
 }
 
 
-/* DIVIDER */
+
 .nav-divider {
   /* width: 1px;
   height: 32px;
@@ -138,7 +135,7 @@
     margin-top: 6px;
 }
 
-/* EXTRA ICON */
+
 .extra-icon {
   position: relative;
   height: 46px;
@@ -151,17 +148,21 @@
 }
 
 
-/* ===== LIGHT MODE ===== */
+
 .bottom-nav {
   background-color: #ffffff;
   color: #000;
   transition: background 0.3s ease;
 }
 
-/* ===== DARK MODE ===== */
-body.dark-theme .bottom-nav {
+
+
+
+body.dark-theme .bottom-nav,
+body.dark-theme .tooltip {
   background-color: #121417;
    border: 1px solid #27282a;
+   color:white;
 }
 
 body.dark-theme .bottom-nav,
@@ -195,196 +196,3 @@ body.dark-theme .nav-item.active .nav-svg circle {
   transition: fill .25s ease;
 }
 
-/* .bottom-nav {
-    position: fixed;
-    bottom: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    padding: 10px;
-    background: hsl(220 7% 100%);
-    
-    background: #ffffff;
-    border-radius: 0.75rem;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
-    z-index: 9999;
-}
-
-
-.nav-item {
-    height: 46px;
-    max-width: 46px;
-    padding: 0 14px;
-    border-radius: 23px;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    overflow: hidden;
-    color: #b5b5b5;
-    transition:
-        max-width 420ms cubic-bezier(.22, .9, .35, 1),
-        background 300ms ease,
-        color 300ms ease;
-}
-
-
-.nav-item .icon {
-    display: flex;
-    font-size: 24px;
-}
-
-
-.nav-item .label {
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(-6px);
-    font-size: 14px;
-    font-weight: 500;
-    transition:
-        opacity 220ms ease,
-        transform 220ms ease;
-}
-
-
-.nav-item.active {
-    max-width: 90px;
-    color: #111;
-}
-
-.nav-item.active .label {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-.nav-item:active {
-    transform: scale(.96);
-}
-
-
-.nav-divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(255,255,255,.25);
-  margin: 0 8px;
-}
-
-
-.extra-icon {
-  height: 46px;
-  width: 46px;
-  border-radius: 50%;
-  border: none;
-  background: transparent;
-  color: #b5b5b5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background .25s ease, color .25s ease;
-} */
-
-/* .extra-icon:hover {
-  background: rgba(255,255,255,.12);
-} */
-
-/* 🌗 Dark Theme */
-/* body.dark-theme {
-  background: #0b0b0b;
-  color: white;
-} */
-
-/* body.dark-theme .bottom-nav {
-  background: hsl(220 13% 8%);
-  background: #121417;
-
-}
-
-body.dark-theme .nav-item.active {
-  color:white;
-}
-
-body.dark-theme .extra-icon {
-  color: #333;
-}
-
-body.dark-theme .nav-divider {
-  background:white;
-}
-
-
-
-.nav-item,
-.extra-icon {
-  position: relative;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 14px;
-  transition: background 0.2s ease;
-}
-
-
-.nav-item:hover,
-.extra-icon:hover {
-  background: #e5e5e5;
-}
-
-.nav-item::after,
-.extra-icon::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ffffff;
-  color: #333;
-  padding: 6px 10px;
-  font-size: 13px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.2s ease;
-}
-
-
-.nav-item::before,
-.extra-icon::before {
-  content: "";
-  position: absolute;
-  bottom: 115%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 6px solid transparent;
-  border-top-color: #fff;
-  opacity: 0;
-}
-
-
-.nav-item:hover::after,
-.nav-item:hover::before,
-.extra-icon:hover::after,
-.extra-icon:hover::before {
-  opacity: 1;
-}
-
-
-
-.nav-item.active svg {
-  color: #000;
-  stroke-width: 2.2;
-}
-
-
-body.dark-theme .nav-item.active svg {
-  color: #fff;
-} */
