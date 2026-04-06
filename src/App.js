@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import { Routes, Route, useLocation } from "react-router-dom"
 
 import BottomNav from "./Components/BottomNav/BottomNav"
 import Home from "./pages/Home/Home"
