@@ -3,8 +3,6 @@
 
 .floating-card {
   position: fixed;
-  /* top: 180px;
-  left: 420px; */
   width: 300px;
   height: 300px;
   background: #000;
@@ -33,7 +31,6 @@
   height: 300px;
   background: #000;
   border-radius: 10px;
-  /* box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5); */
   transform: rotate(-1deg);
   transition: none;
   display: flex;
@@ -42,13 +39,6 @@
   cursor: pointer;
 }
 
-/* HOVER EFFECT */
-/* .interactive-card:hover {
-  transform: rotate(-12deg) scale(1.05);
-  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7);
-} */
-
-/* IMAGE */
 .interactive-card img {
   width: 70%;
   height: auto;
@@ -59,3 +49,121 @@
 /* .interactive-card:hover img {
   transform: scale(1.08);
 } */
+
+body.dark-theme .floating-card {
+  background: #0d0d0d;
+}
+
+body.dark-theme .interactive-card {
+  background: #0d0d0d;
+}
+
+/* ===== RESPONSIVE DESIGN FOR INTERACTIVE CARD PAGE ===== */
+
+/* Mobile - Small devices (< 640px) */
+@media (max-width: 640px) {
+  .floating-card {
+    width: 240px;
+    height: 240px;
+    border-radius: 3px;
+    margin-bottom: 80px;
+  }
+
+  .floating-card img {
+    width: 65%;
+  }
+
+  .interactive-card {
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+  }
+
+  .interactive-card img {
+    width: 65%;
+  }
+}
+
+/* Tablet - Medium devices (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .floating-card {
+    width: 280px;
+    height: 280px;
+    border-radius: 4px;
+    margin-bottom: 70px;
+  }
+
+  .floating-card img {
+    width: 68%;
+  }
+
+  .interactive-card {
+    width: 280px;
+    height: 280px;
+    border-radius: 9px;
+  }
+
+  .interactive-card img {
+    width: 68%;
+  }
+}
+
+/* Desktop - Large devices (> 1024px) */
+@media (min-width: 1025px) {
+  /* Keep original styles */
+}
+
+/* ===== RESPONSIVE DESIGN FOR INTERACTIVE CARD PAGE ===== */
+
+/* Mobile - Small devices (< 640px) */
+@media (max-width: 640px) {
+  .floating-card {
+    width: 240px;
+    height: 240px;
+    border-radius: 3px;
+    margin-bottom: 80px;
+  }
+
+  .floating-card img {
+    width: 65%;
+  }
+
+  .interactive-card {
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+  }
+
+  .interactive-card img {
+    width: 65%;
+  }
+}
+
+/* Tablet - Medium devices (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .floating-card {
+    width: 280px;
+    height: 280px;
+    border-radius: 4px;
+    margin-bottom: 70px;
+  }
+
+  .floating-card img {
+    width: 68%;
+  }
+
+  .interactive-card {
+    width: 280px;
+    height: 280px;
+    border-radius: 9px;
+  }
+
+  .interactive-card img {
+    width: 68%;
+  }
+}
+
+/* Desktop - Large devices (> 1024px) */
+@media (min-width: 1025px) {
+  /* Keep original styles */
+}

@@ -4,7 +4,7 @@ import "./BottomNav.css";
 
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+// import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 
 const HomeIcon = () => (
   <svg className="nav-svg" width="22" height="22" viewBox="0 0 24 24">
@@ -114,9 +114,9 @@ export default function BottomNav() {
     {dark ? <LightModeIcon /> : <DarkModeIcon />}
   </button>
 
-  <button className="extra-icon">
+  {/* <button className="extra-icon">
     <VolumeUpIcon />
-  </button>
+  </button> */}
 </div>
   );
 }

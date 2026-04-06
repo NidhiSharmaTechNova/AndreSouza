@@ -72,6 +72,83 @@
   animation-play-state: running;
 }
 
+/* ===== RESPONSIVE DESIGN FOR SCRATCH CARD PAGE ===== */
+
+/* Mobile - Small devices (< 640px) */
+@media (max-width: 640px) {
+  .scratch-card {
+    width: 280px;
+    height: 280px;
+    border-radius: 5px;
+    margin-bottom: 100px;
+  }
+
+  .st {
+    width: 40px;
+  }
+
+  .s1 { 
+    width: 90px;
+    top: 2%;
+    left: 5%;
+  }
+
+  .s2 { 
+    width: 130px;
+    bottom: 8%;
+    right: 8%;
+  }
+
+  .reveal-text {
+    gap: 12px;
+  }
+
+  .lines {
+    font-size: 48px;
+    padding: 6px 14px;
+  }
+}
+
+/* Tablet - Medium devices (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .scratch-card {
+    width: 320px;
+    height: 320px;
+    border-radius: 6px;
+    margin-bottom: 80px;
+  }
+
+  .st {
+    width: 48px;
+  }
+
+  .s1 { 
+    width: 105px;
+    top: 3%;
+    left: 6%;
+  }
+
+  .s2 { 
+    width: 150px;
+    bottom: 9%;
+    right: 9%;
+  }
+
+  .reveal-text {
+    gap: 14px;
+  }
+
+  .lines {
+    font-size: 58px;
+    padding: 7px 16px;
+  }
+}
+
+/* Desktop - Large devices (> 1024px) */
+@media (min-width: 1025px) {
+  /* Keep original styles */
+}
+
 @keyframes moveRight {
   from { transform: translateX(-40%); }
   to { transform: translateX(40%); }

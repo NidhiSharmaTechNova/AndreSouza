@@ -1,7 +1,7 @@
 .craft {
   padding: 50px 20px;
   max-width: 1500px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .carft-left {
@@ -11,8 +11,10 @@
 
 .craft-card {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  /* gap: 60px; */
+  align-items: flex-start;
+  gap: 40px;
   margin-bottom: 130px;
 }
 
@@ -39,7 +41,7 @@
   gap: 10px;
   margin-top: 33px;
   flex-wrap: wrap;
-  /* width: 230px; */
+
 }
 
 .carft-button p {
@@ -56,6 +58,18 @@
   font-family: "Arimo", sans-serif;
 }
 
+
+/* .craft-right {
+  flex: 0 0 auto;
+  width: min(640px, 45vw);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  max-width: 895px;
+} */
 
 .craft-right {
   flex: 1;
@@ -135,13 +149,6 @@
   font-weight: 500;
 }
 
-.craft-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .nav-item {
   position: relative;
   height: 46px;
@@ -159,6 +166,9 @@
   transition: max-width 420ms cubic-bezier(.22, .9, .35, 1), background 300ms ease;
 }
 
+.album-player {
+  margin-right: 30px;
+}
 
 .nav-item.active {
   max-width: 96px;
@@ -212,6 +222,150 @@ body.dark-theme .toolbar-box {
   fill: #ffffff;
 }
 
+
+@media (max-width: 640px) {
+  .craft {
+    padding: 30px 16px;
+    margin-bottom: 80px;
+  }
+
+  .craft-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+
+  .carft-left {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .carft-left h2 {
+    font-size: 16px;
+  }
+
+  .carft-left h3 {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 20px;
+  }
+
+  .carft-button {
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .carft-button p {
+    font-size: 12px;
+    min-height: 24px;
+    padding: 2px 8px;
+  }
+
+  .craft-right {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .craft-right>* {
+    max-width: 100%;
+  }
+
+  .craft-right>.album-player {
+    max-width: 40%;
+  }
+
+
+  .craft-right .float {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .craft {
+    padding: 40px 30px;
+    margin-bottom: 60px;
+  }
+
+  .craft-card {
+    margin-bottom: 90px;
+  }
+
+  .carft-left {
+    width: 250px;
+  }
+
+  .carft-left h2 {
+    font-size: 18px;
+  }
+
+  .carft-left h3 {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .carft-button {
+    gap: 9px;
+    margin-top: 25px;
+  }
+
+  .carft-button p {
+    font-size: 13px;
+  }
+
+  .craft-right {
+    width: calc(100% - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .craft-right .float {
+    flex: 1 1 calc(50% - 7.5px);
+    min-width: 160px;
+  }
+
+  .craft-right>.album-player {
+    width: 100%;
+    max-width: 220px;
+    transform: scale(1.05);
+  }
+}
+
+@media (min-width: 360px) {
+
+  .craft-right>* {
+        max-width: 130%;
+    }
+  .label {
+    font-size: 10px;
+  }
+
+  .nav-svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .nav-item.active {
+    max-width: 100px;
+  }
+
+  .flip-card{
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1025px) {}
+
 body.dark-theme .nav-item.active {
   background-color: #27282a;
 }
@@ -249,4 +403,3 @@ body.dark-theme .nav-item:hover {
   background-color: #27282a;
   color: #e5e7eb;
 }
-

@@ -275,10 +275,6 @@ html,
   border-color: #e5e5e5;
  }
 
-
-
-
- 
  .dot {
    width: 40px;
    height: 40px;
@@ -328,6 +324,9 @@ html,
    font-weight: 600;
    font-family: "Arimo", sans-serif;
  }
+
+
+
 
  .img1 {
    top: 52.4%;
@@ -410,16 +409,16 @@ html,
    border-radius: 10px;
  }
 
- .sticker .sticker6 {
-   width: 90px;
-   display: block;
-   border-radius: 10px;
- }
-
  .img5 {
    top: 31.7%;
    left: 53.9%;
    transform: translate(220px, 160px) rotate(-18deg);
+ }
+
+ .sticker .sticker6 {
+   width: 90px;
+   display: block;
+   border-radius: 10px;
  }
 
  .img6 {
@@ -684,3 +683,22 @@ html,
  body.dark-theme .links button:hover {
    background: #27282a;
  }
+
+@media (max-width: 640px){
+  .center-card{
+        width: 380px;
+  }
+
+  .links{
+    gap:6px;
+  }
+
+  .links button{
+    gap: 2px;
+    padding: 5px 9px;
+  }
+
+  .links .icon {
+   font-size: 1rem;
+  }
+}

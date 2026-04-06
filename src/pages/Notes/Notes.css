@@ -83,5 +83,106 @@ body.dark-theme .note-row:hover {
 body.dark-theme .line{
     background: #1f2229;
 }
+/* ===== RESPONSIVE DESIGN FOR NOTES PAGE ===== */
 
+/* Mobile - Small devices (< 640px) */
+@media (max-width: 640px) {
+  .notes-page {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 0 16px;
+    margin-bottom: 80px;
+  }
 
+  .year-block {
+    margin-bottom: 24px;
+  }
+
+  .year {
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 0 12px;
+  }
+
+  .note-row {
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+}
+
+/* Tablet - Medium devices (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .notes-page {
+    max-width: 650px;
+    margin: 70px auto;
+    padding: 0 30px;
+    margin-bottom: 60px;
+  }
+
+  .year-block {
+    margin-bottom: 32px;
+  }
+
+  .year {
+    font-size: 19px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+  }
+
+  .note-row {
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 7px;
+    font-size: 15px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .date {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 375px) {
+  .notes-page {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 0 1px;
+  }
+}
+
+@media (min-width: 360px) {
+  .title {
+    font-size: 11px;
+  }
+}
+
+/* Desktop - Large devices (> 1024px) */
+@media (min-width: 1025px) {
+  /* Keep original styles */
+}
+
+body.dark-theme .title,
+body.dark-theme .date {
+  color: white;
+}
+
+body.dark-theme .note-row:hover {
+  background: #181b20;
+}
+
+body.dark-theme .line {
+  background: #1f2229;
+}

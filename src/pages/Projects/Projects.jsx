@@ -12,11 +12,13 @@ export default function Projects() {
   const cardsRef = useRef([]);
 
   useEffect(() => {
+    if (window.innerWidth < 641) return; // Disable zoom on mobile
+
     cardsRef.current.forEach((card) => {
       if (!card) return;
 
       gsap.to(card, {
-        scale: 1.15, 
+        scale: 1.15,
         scrollTrigger: {
           trigger: card,
           start: "top center",

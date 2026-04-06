@@ -1,13 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import "./Craft.css"
 import { useState } from "react";
-import HomeIcon from "@mui/icons-material/Home"
-import SearchIcon from "@mui/icons-material/Search"
-import FavoriteIcon from "@mui/icons-material/Favorite"
-import PersonIcon from "@mui/icons-material/Person"
 import Countdown from '../Countdown/Countdown';
 import Book from '../Book/Book';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import TurbulenceCanvas from '../Canvas/Canvas';
 import AlbumPlayer from '../AlbumPlayer/AlbumPlayer';
 
@@ -189,7 +185,7 @@ export default function Craft() {
             </div>
           </div>
           <div className="craft-right">
-            <AlbumPlayer/>
+            <AlbumPlayer className='album-player'/>
           </div>
         </div>
 

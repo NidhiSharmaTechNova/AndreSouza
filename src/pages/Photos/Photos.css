@@ -92,6 +92,82 @@
   right: 20px;
   background: white;
   width: 34px;
+}
+
+/* ===== RESPONSIVE DESIGN FOR PHOTOS PAGE ===== */
+
+/* Mobile - Small devices (< 640px) */
+@media (max-width: 640px) {
+  .photos-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 40px 12px 100px 12px;
+  }
+
+  .photos-page img {
+    border-radius: 12px;
+    height: 180px;
+  }
+
+  .slider-wrapper {
+    width: 90%;
+  }
+
+  .slide {
+    min-width: 50%;
+  }
+
+  .navigation {
+    gap: 12px;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Tablet - Medium devices (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .photos-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+    padding: 50px 30px 80px 30px;
+  }
+
+  .photos-page img {
+    border-radius: 14px;
+    height: 250px;
+  }
+
+  .slider-wrapper {
+    width: 80%;
+  }
+
+  .slide {
+    min-width: 50%;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+
+  .nav-button {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* Desktop - Large devices (> 1024px) */
+@media (min-width: 1025px) {
+  /* Keep original styles */
+}
+
+.close {
   height: 34px;
   border-radius: 50%;
   font-size: 24px;
